@@ -9,6 +9,7 @@ def fecha():
 
 	year=datetime.date.today().strftime("%Y")
 	mes=datetime.date.today().strftime("%B")
+	dia=datetime.date.today().strftime("%A")
 	fecha_actual = datetime.date.today().strftime("%Y%m%d")
 	print mes,year
 

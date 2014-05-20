@@ -4,26 +4,39 @@ import datetime, csv
 #Nota: para acceder a las celdas, primero toca crearlas, 
 #cuando una hoja de trabajo es creada no contiene celdas.
 # Formatear la fecha y la hora para el nombre del archivo
+
 year=datetime.date.today().strftime("%Y")
 mes=datetime.date.today().strftime("%B")
 libro = Workbook() #instanciar un libro de excel
 hoja = libro.get_active_sheet() #activar una hoja de calculo
 hoja.title ="Disponibilidad"
 
-Nombre = hoja.cell("A1")
-Nombre.value="Host"
+id_muestra = hoja.cell("A1")
+id_muestra.value="id_muestra"
+rbd = hoja.cell("B1")
+rbd.value="rbd"
+id_enlace = hoja.cell("C1")
+id_enlace.value="id_enlace"
+anexo = hoja.cell("D1")
+anexo.value="anexo"
+establecimiento = hoja.cell("E1")
+establecimiento.value="establecimiento"
+tip_servicio = hoja.cell("F1")
+tip_servicio.value="tip_servicio"
+id_bts = hoja.cell("G1")
+id_bts.value="id_bts"
+nombre_bts = hoja.cell("H1")
+nombre_bts.value="nombre_bts"
+fecha_muestra = hoja.cell("I1")
+fecha_muestra.value="fecha_muestra"
+dia_muestra = hoja.cell("J1")
+dia_muestra.value="dia_muestra"
+hora_muestra = hoja.cell("K1")
+hora_muestra.value="hora_muestra"
+disponibilidad = hoja.cell("L1")
+disponibilidad.value="disponibilidad"
 
-Apellidos = hoja.cell("B1")
-Apellidos.value="IdServicio"
-
-Apellidos = hoja.cell("B1")
-Apellidos.value="IdVivienda"
-
-Apellidos = hoja.cell("B2")
-Apellidos.value="RDB"
 #celda.value = "hola hola"
-
-
 # Cargar archivo CSV
 reader = csv.reader(open('prueba.csv','rb'),delimiter=",")
 for index,row in enumerate(reader):
